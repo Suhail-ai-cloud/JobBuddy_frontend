@@ -1,8 +1,8 @@
 // jobbuddy-frontend\src\api\api.js
 import axios from "axios";
 
-const API_BASE = "http://localhost:8000/api";
-export const MEDIA_BASE = "http://localhost:8000";  // Django backend URL
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8000/api";
+export const MEDIA_BASE = API_BASE.replace("/api", ""); // auto matches backend URL
 
 export const API = axios.create({
   baseURL: API_BASE,
