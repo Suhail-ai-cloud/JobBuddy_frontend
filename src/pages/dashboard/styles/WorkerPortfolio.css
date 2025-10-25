@@ -1,0 +1,272 @@
+/* ===============================
+   Worker Portfolio Dashboard
+=============================== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+}
+
+/* Buttons */
+.wpd-btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.wpd-btn:hover {
+  opacity: 0.9;
+}
+
+.wpd-create-btn {
+  background-color: #00796b;
+  color: #fff;
+  font-size: 16px;
+}
+.wpd-create-btn:hover {
+  background-color: #004d40;
+}
+
+/* Container */
+.wpd-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.wpd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ==================== Popup Form ==================== */
+.wpd-popup-form {
+  position: fixed;
+  width: 500px;
+  max-width: 95%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  padding: 25px 20px;
+  z-index: 1000;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Draggable header */
+.wpd-popup-form-header {
+  cursor: grab;
+  user-select: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Inputs */
+.wpd-popup-form input[type="text"],
+.wpd-popup-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.wpd-popup-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Drag-drop area */
+.wpd-drag-drop {
+  border: 2px dashed #00796b;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: #00796b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.wpd-drag-drop.drag-over {
+  background-color: #b2dfdb;
+  border-color: #00796b;
+  color: #00796b;
+}
+
+/* Media preview */
+.wpd-preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wpd-preview-item {
+  width: calc(50% - 5px);
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.wpd-preview-item img,
+.wpd-preview-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Form buttons */
+.wpd-popup-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ==================== Portfolio Cards ==================== */
+.wpd-portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.wpd-portfolio-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.wpd-portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.wpd-portfolio-card h4 {
+  margin: 10px 15px 5px;
+  font-size: 18px;
+  color: #00796b;
+}
+.wpd-portfolio-card p {
+  margin: 0 15px 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Media items inside cards */
+.wpd-portfolio-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 10px;
+}
+.wpd-media-item {
+  position: relative;
+  width: calc(50% - 5px);
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.wpd-media-item img,
+.wpd-media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wpd-media-delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ef4444;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Card buttons */
+.wpd-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+/* ==================== Comments Popup ==================== */
+.wpd-popup-comments {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 95%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  padding: 20px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.wpd-popup-comments h4 {
+  font-size: 18px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Individual comment card */
+.wpd-comment-card {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+.wpd-comment-card:hover {
+  background-color: #e0f2f1;
+}
+.wpd-comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  flex-shrink: 0;
+}
+.wpd-comment-body {
+  display: flex;
+  flex-direction: column;
+}
+.wpd-comment-username {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 3px;
+  color: #00796b;
+}
+.wpd-comment-text {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Close button */
+.wpd-popup-btn-cancel {
+  background-color: #ef4444;
+  color: #fff;
+}

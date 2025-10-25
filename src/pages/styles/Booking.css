@@ -1,0 +1,25 @@
+.booking-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.booking-container label {
+  display: block;
+  margin-top: 10px;
+}
+.booking-container input, select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+.booking-container button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

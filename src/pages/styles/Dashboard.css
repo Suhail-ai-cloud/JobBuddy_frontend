@@ -1,0 +1,10 @@
+.dashboard-container { padding: 20px; }
+.worker-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+.worker-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  text-align: center;
+}
+.worker-card img { width: 100%; border-radius: 50%; }

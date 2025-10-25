@@ -1,0 +1,232 @@
+/* ---------------- Page Container ---------------- */
+.support-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  color: #333; /* Text Dark */
+  background-color: #f5f5f5; /* Page Background */
+}
+
+/* ---------------- Card Sections ---------------- */
+.create-ticket,
+.ticket-list,
+.ticket-detail {
+  background: #b2dfdb; /* Primary Light / Backgrounds */
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create-ticket:hover,
+.ticket-list:hover,
+.ticket-detail:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------- Inputs & Buttons ---------------- */
+.create-ticket input,
+.create-ticket textarea,
+.reply-box textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create-ticket input:focus,
+.create-ticket textarea:focus,
+.reply-box textarea:focus {
+  border-color: #00796b; /* Primary Teal */
+  box-shadow: 0 0 5px rgba(0, 121, 107, 0.2);
+  outline: none;
+}
+
+.create-ticket button,
+.reply-box button {
+  background: #00796b; /* Primary Teal */
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.create-ticket button:hover,
+.reply-box button:hover {
+  background: #004d40; /* Button Hover / Active */
+  transform: translateY(-2px);
+}
+
+/* ---------------- Ticket Card ---------------- */
+.ticket-card {
+  border: 1px solid #b2dfdb; /* Primary Light border */
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-card:hover {
+  background: #e0f2f1; /* lighter teal hover */
+  transform: translateY(-2px);
+}
+
+.ticket-card .ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ticket-card .ticket-header strong {
+  font-size: 1rem;
+  color: #333; /* Text Dark */
+}
+
+.ticket-card .status {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Status Colors */
+.status.open {
+  background: #00796b; /* Primary Teal */
+}
+.status.in_progress {
+  background: #b2dfdb; /* Primary Light / Mint */
+  color: #004d40; /* Darker Teal text for contrast */
+}
+.status.resolved,
+.status.closed {
+  background: #555; /* Text Light / Medium Gray */
+}
+
+/* ---------------- Replies Box ---------------- */
+.replies-box {
+  border: 1px solid #b2dfdb; /* Primary Light border */
+  border-radius: 12px;
+  padding: 12px;
+  height: 300px;
+  overflow-y: auto;
+  background: #f5f5f5; /* Page Background */
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reply {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.reply.worker {
+  align-self: flex-end;
+}
+
+.reply.worker .msg-bubble {
+  background: #b2dfdb; /* Primary Light */
+  color: #004d40; /* Darker Teal text */
+  align-self: flex-end;
+}
+
+.reply.admin .msg-bubble {
+  background: #f5f5f5; /* Page Background */
+  color: #333; /* Text Dark */
+  align-self: flex-start;
+}
+
+.msg-bubble {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* ---------------- Back Button ---------------- */
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #00796b; /* Primary Teal */
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-btn:hover {
+  color: #004d40; /* Darker Teal */
+  text-decoration: underline;
+}
+
+/* ---------------- No Tickets / Replies ---------------- */
+.no-tickets,
+.no-replies {
+  text-align: center;
+  color: #555; /* Text Light / Medium Gray */
+  font-style: italic;
+}
+
+/* ---------------- Loading / Error ---------------- */
+.loading-msg,
+.error-msg {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  color: #00796b; /* Primary Teal */
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .create-ticket,
+  .ticket-list,
+  .ticket-detail {
+    padding: 16px;
+  }
+
+  .ticket-card {
+    padding: 12px;
+  }
+
+  .msg-bubble {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticket-card .ticket-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .reply.worker,
+  .reply.admin {
+    max-width: 100%;
+  }
+}

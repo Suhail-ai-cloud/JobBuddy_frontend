@@ -1,0 +1,98 @@
+.worker-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+.worker-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.worker-image-container {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.worker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.worker-card:hover .worker-image {
+  transform: scale(1.05);
+}
+
+/* Verified badge */
+.verified-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #3498db; /* blue for safe/secure */
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.worker-info {
+  padding: 8px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.worker-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.worker-skill {
+  font-size: 0.82rem;
+  color: #555;
+  overflow-wrap: break-word;
+  max-height: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.worker-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #777;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.worker-rating {
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.worker-rating span {
+  margin-right: 1px;
+}
+
+.worker-card:hover .worker-rating {
+  transform: scale(1.1);
+}

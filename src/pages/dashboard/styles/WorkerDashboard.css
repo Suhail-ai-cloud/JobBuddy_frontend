@@ -1,0 +1,243 @@
+/* ---------------- Page Container ---------------- */
+.wd-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+.wd-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #00796b;
+  margin-bottom: 2rem;
+}
+
+/* ---------------- Totals Grid ---------------- */
+.wd-totals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wd-total-card {
+  background-color: #b2dfdb;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.wd-total-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wd-total-card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #004d40;
+  margin-bottom: 0.5rem;
+}
+
+.wd-total-card p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00796b;
+}
+
+/* ---------------- Bookings Table ---------------- */
+.wd-bookings-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00796b;
+  margin-bottom: 1rem;
+}
+
+/* Table Wrapper for Horizontal Scroll */
+.wd-table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* enables horizontal scroll */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+  padding-bottom: 1rem;
+}
+
+/* Optional scrollbar styling */
+.wd-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.wd-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.wd-payout-table {
+  width: 100%;
+  min-width: 900px; /* prevents cutting off columns */
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.wd-payout-table th,
+.wd-payout-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  white-space: nowrap; /* prevents wrapping */
+}
+
+.wd-payout-table th {
+  background-color: #00796b;
+  color: #fff;
+  font-weight: 600;
+}
+
+.wd-payout-table td {
+  background-color: #fff;
+  color: #333;
+  border-radius: 8px;
+}
+
+.wd-payout-table tr td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.wd-payout-table tr td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* ---------------- Status ---------------- */
+.wd-status {
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.wd-status.completed {
+  background-color: #00796b;
+  color: #fff;
+}
+
+.wd-status.rejected {
+  background-color: #e57373;
+  color: #fff;
+}
+
+.wd-status.pending {
+  background-color: #ffb74d;
+  color: #fff;
+}
+
+/* ---------------- Buttons ---------------- */
+.wd-remove-btn {
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wd-remove-btn:hover {
+  background-color: #004d40;
+}
+
+/* ---------------- No Data ---------------- */
+.wd-no-bookings {
+  text-align: center;
+  padding: 1rem 0;
+  color: #555;
+  font-style: italic;
+}
+
+/* ---------------- Loading ---------------- */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #00796b;
+  margin-top: 2rem;
+}
+
+/* ---------------- Responsive Breakpoints ---------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .wd-totals-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Medium Screens */
+@media (max-width: 768px) {
+  .wd-totals-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .wd-payout-table th,
+  .wd-payout-table td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .wd-total-card h2 {
+    font-size: 0.9rem;
+  }
+
+  .wd-total-card p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
+  .wd-totals-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wd-payout-table {
+    font-size: 0.8rem;
+    min-width: 700px; /* horizontal scroll will show remaining */
+  }
+}
+
+/* Extra Small Screens - Stacked Table View */
+@media (max-width: 360px) {
+  .wd-payout-table,
+  .wd-payout-table thead,
+  .wd-payout-table tbody,
+  .wd-payout-table th,
+  .wd-payout-table td,
+  .wd-payout-table tr {
+    display: block;
+  }
+
+  .wd-payout-table thead tr {
+    display: none;
+  }
+
+  .wd-payout-table td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    white-space: normal;
+  }
+
+  .wd-payout-table td::before {
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: 600;
+    content: attr(data-label);
+  }
+}

@@ -1,0 +1,206 @@
+.worker-verification {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  font-family: "Arial", sans-serif;
+}
+
+.worker-verification h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.status {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.status.pending { color: orange; }
+.status.approved { color: green; }
+.status.rejected { color: red; }
+
+.admin-notes {
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label { font-weight: bold; display: block; margin-bottom: 0.3rem; }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+textarea { min-height: 80px; resize: none; }
+
+.file-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.file-upload {
+  position: relative;
+  text-align: center;
+  border: 1px dashed #ccc;
+  padding: 0.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.file-upload img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.file-upload input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.upload-overlay {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  padding: 0.3rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem auto 0;
+  padding: 0.8rem 2rem;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.verification-approved {
+  text-align: center;
+  padding: 3rem;
+}
+.payment-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: linear-gradient(135deg, #fff8f5, #ffe0d9);
+  padding: 2rem;
+}
+
+.payment-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.5rem 3rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 45px rgba(255, 90, 95, 0.25);
+}
+
+.payment-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.payment-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.price-display {
+  background: #fff3f3;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.price-display .currency {
+  font-size: 1.2rem;
+  color: #ff5a5f;
+  font-weight: bold;
+  margin-right: 0.3rem;
+}
+
+.price-display .amount {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ff5a5f;
+}
+
+.pay-btn {
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.pay-btn:hover {
+  background-color: #e51e50;
+}
+
+.pay-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.trust-badge {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.trust-badge img {
+  width: 40px;
+  margin-bottom: 0.5rem;
+}

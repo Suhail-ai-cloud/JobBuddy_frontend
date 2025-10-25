@@ -1,0 +1,48 @@
+.payment-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+.payment-methods {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.payment-methods label {
+  cursor: pointer;
+}
+.payment-container button {
+  padding: 8px 20px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.payment-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+.payment-methods {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.payment-methods label {
+  cursor: pointer;
+}
+.payment-container button {
+  padding: 8px 20px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

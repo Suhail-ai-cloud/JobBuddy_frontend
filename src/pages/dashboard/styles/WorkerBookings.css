@@ -1,0 +1,221 @@
+/* ---------------- Container ---------------- */
+.worker-bookings-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  background: #f5f5f5; /* Page Background */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.worker-bookings-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Text Dark */
+}
+
+/* ---------------- Table ---------------- */
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* allow horizontal scroll on mobile */
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #333; /* Text Dark */
+}
+
+.bookings-table th {
+  background-color: #b2dfdb; /* Primary Light / Mint */
+  color: #00796b; /* Primary Teal */
+  font-weight: 600;
+}
+
+.bookings-table tr:hover {
+  background-color: #e0f2f1; /* lighter mint hover */
+}
+
+/* ---------------- Action Buttons ---------------- */
+.accept-btn { 
+  background-color: #00796b; /* Primary Teal */
+  color: #fff; 
+  border: none; 
+  padding: 6px 12px; 
+  margin-right: 5px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background 0.3s;
+}
+.accept-btn:hover { background-color: #004d40; }
+
+.reject-btn { 
+  background-color: #d9534f; 
+  color: #fff; 
+  border: none; 
+  padding: 6px 12px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background 0.3s;
+}
+.reject-btn:hover { background-color: #b22c2c; }
+
+.complete-btn { 
+  background-color: #00796b; /* Primary Teal */
+  color: #fff; 
+  border: none; 
+  padding: 6px 12px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background 0.3s;
+}
+.complete-btn:hover { background-color: #004d40; }
+
+.delete-btn { 
+  background-color: #555; /* Text Light / Medium Gray */
+  color: #fff; 
+  border: none; 
+  padding: 6px 12px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  margin-left: 5px;
+}
+.delete-btn:hover { background-color: #333; }
+
+.view-details-btn { 
+  background-color: #b2dfdb; /* Primary Light */
+  color: #00796b; 
+  border: none; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  gap: 5px;
+  transition: background 0.3s;
+}
+.view-details-btn:hover { background-color: #e0f2f1; }
+
+/* ---------------- Filter Buttons ---------------- */
+.filter-btn {
+  background-color: #00796b; /* Primary Teal */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-right: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+.filter-btn:hover { background-color: #004d40; }
+
+/* ---------------- Loading / Error ---------------- */
+.loading, .error { 
+  text-align: center; 
+  margin-top: 20px; 
+  color: #555; /* Text Light */
+}
+
+/* ---------------- Modal ---------------- */
+.booking-modal { 
+  width: 95%; 
+  max-width: 900px; 
+  padding: 20px; 
+  border-radius: 12px; 
+  background: #b2dfdb; /* Primary Light */
+  overflow-y: auto; 
+  max-height: 90vh; 
+}
+
+.modal-header h3 { margin: 0; color: #00796b; }
+.close-icon { cursor: pointer; font-size: 1.5rem; color: #333; }
+.modal-body { display: flex; flex-direction: column; gap: 15px; }
+
+/* ---------------- Booking Info Grid ---------------- */
+.booking-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.info-card { padding: 10px; background: #f5f5f5; border-radius: 8px; }
+
+/* ---------------- Status Badges ---------------- */
+.status-badge { 
+  display: inline-block; 
+  padding: 3px 10px; 
+  border-radius: 8px; 
+  color: #fff; 
+  font-size: 0.9rem; 
+  text-transform: capitalize; 
+}
+.status-badge.pending { background: #ffb74d; } /* Primary Light / Orange */
+.status-badge.accepted { background: #00796b; } /* Primary Teal */
+.status-badge.rejected { background: #d9534f; }
+.status-badge.completed { background: #004d40; } /* Darker Teal */
+.status-badge.no_show_reported { background: #ffc107; }
+.status-badge.investigating { background: #17a2b8; }
+
+/* ---------------- Text & Payments ---------------- */
+.text-section p { margin: 8px 0; font-size: 0.9rem; line-height: 1.4; }
+.payments-section ul { list-style: none; padding: 0; }
+.payments-section li { margin: 5px 0; padding: 8px; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
+
+/* ---------------- Images ---------------- */
+.images-section .images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.images-section img { 
+  width: 100%; 
+  height: 120px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: transform 0.2s; 
+}
+.images-section img:hover { transform: scale(1.05); }
+
+/* Zoomed Image Modal */
+.image-zoom img { width: 100%; max-height: 80vh; object-fit: contain; }
+
+/* ---------------- Tabs ---------------- */
+.booking-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.booking-tabs button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #b2dfdb; /* Primary Light */
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: #00796b;
+}
+.booking-tabs button:hover { background: #e0f2f1; }
+.booking-tabs button.active { background: #00796b; color: #fff; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .bookings-table th, .bookings-table td { font-size: 0.85rem; padding: 8px 6px; }
+  .accept-btn, .reject-btn, .complete-btn, .delete-btn, .view-details-btn, .filter-btn { padding: 4px 8px; font-size: 0.8rem; }
+  .images-section img { height: 100px; }
+}
+
+@media (max-width: 480px) {
+  .bookings-table { display: block; overflow-x: auto; min-width: 600px; }
+}

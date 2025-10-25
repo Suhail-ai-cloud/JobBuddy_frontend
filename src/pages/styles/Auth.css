@@ -1,0 +1,119 @@
+/* Page background */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card */
+.auth-card {
+  background-color: #b2dfdb;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Title */
+.auth-title {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input group */
+.input-group {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #00796b;
+  font-size: 18px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  transition: 0.3s all;
+}
+
+.auth-form input::placeholder {
+  color: #555;
+}
+
+/* Button */
+.auth-button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00796b;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+/* Divider */
+.auth-divider {
+  margin: 20px 0;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Google login */
+.google-login-btn {
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer links */
+.auth-footer {
+  margin-top: 15px;
+  color: #555;
+}
+
+.auth-footer a {
+  color: #00796b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.auth-footer a:hover {
+  color: #004d40;
+  text-decoration: underline;
+}
+/* Select dropdown */
+.auth-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  transition: 0.3s all;
+}

@@ -1,0 +1,179 @@
+.rc-card-modern {
+
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.rc-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.rc-user {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.rc-rating-stars {
+  background-color: #f1f1f1;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.rc-comment-text {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.rc-media-strip {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.rc-media-thumb {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.rc-media-thumb:hover {
+  transform: scale(1.05);
+  border-color: #aaa;
+}
+
+.rc-thumb-img,
+.rc-thumb-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rc-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.rc-popup-content {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rc-popup-close,
+.rc-popup-prev,
+.rc-popup-next {
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  top: 10px;
+}
+
+.rc-popup-close { right: 10px; }
+.rc-popup-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.rc-popup-next { right: 10px; top: 50%; transform: translateY(-50%); }
+
+.rc-popup-media-container {
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.rc-popup-media {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+/* Clamp long comments */
+.rc-comment-text.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Safari / Chrome */
+  line-clamp: 5;         /* Standard syntax (experimental) */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 5); /* fallback for older browsers */
+}
+
+
+.rc-comment-text.expanded {
+  display: block;
+}
+
+.rc-toggle-btn {
+  margin-top: -0.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.rc-toggle-btn:hover {
+  color: #1d4ed8;
+}
+/* Placeholder for empty media */
+.rc-media-placeholder {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 2px dashed #00796b; /* Primary Teal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #00796b;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.rc-media-placeholder p {
+  margin: 0;
+  margin-top: 2px;
+}
+
+/* Optional: make placeholder responsive */
+@media (max-width: 480px) {
+  .rc-media-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+}
