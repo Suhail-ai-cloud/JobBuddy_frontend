@@ -31,7 +31,7 @@ export const updateUserProfile = async (formData) => {
 
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api", // ✅ Django backend
+  baseURL: process.env.REACT_APP_API_BASE, // ✅ Django backend
 });
 
 export const updateWorkerAvailability = async (workerId, data) => {
