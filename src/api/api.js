@@ -1,14 +1,17 @@
 // jobbuddy-frontend\src\api\api.js
+// src/api/api.js
 import axios from "axios";
+import { API_BASE } from "../config";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8000/api";
-export const MEDIA_BASE = API_BASE.replace("/api", ""); // auto matches backend URL
-
+// Base axios instance
 export const API = axios.create({
   baseURL: API_BASE,
 });
 
-// Request interceptor to add access token
+// Optional: if you need media URL
+export const MEDIA_BASE = API_BASE.replace("/api", "");
+
+// Add token to every request if exists
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("access_token");
   if (token) {
@@ -16,6 +19,7 @@ API.interceptors.request.use((config) => {
   }
   return config;
 });
+
 
 
 /* =============================
