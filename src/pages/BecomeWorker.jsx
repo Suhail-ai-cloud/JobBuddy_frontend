@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import API_BASE from "../config";
+import {API_BASE} from "../config";
 import { UserContext } from "../context/UserContext";
 import { motion } from "framer-motion";
 import { FaTools, FaClipboardCheck, FaUserTie } from "react-icons/fa";
