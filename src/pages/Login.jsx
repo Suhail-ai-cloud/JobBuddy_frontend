@@ -13,6 +13,10 @@ export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [role, setRole] = useState("user");
   const navigate = useNavigate();
+    React.useEffect(() => {
+    console.log("Google Client ID:", process.env.REACT_APP_GOOGLE_CLIENT_ID);
+  }, []);
+
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
