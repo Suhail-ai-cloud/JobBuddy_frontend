@@ -1,20 +1,25 @@
 import axios from "axios";
 import { API_BASE } from "../config";
 
-
 const API = axios.create({ baseURL: API_BASE });
 
-// Normal login
-export const login = async (email, password) => {
-  return await API.post("/login/", { email, password });
-};
+// Automatically attach JWT token if exists
+API.interceptors.request.use((config) => {
+  const token = localStorage.getItem("access_token");
+  if (token) {
+    config.headers["Authorization"] = `Bearer ${token}`;
+  }
+  return config;
+});
 
+// Normal login
+export const login = (email, password) => API.post("/login/", { email, password });
+
+// Signup
 export const signup = (data) => API.post("/signup/", data);
 
-export const resetPassword = (data) =>
-  API.post("/password-reset/", data); // NOT /auth/reset-password/
+// Password reset
+export const resetPassword = (data) => API.post("/password-reset/", data);
 
-
-// Google login step 1: send token to backend
-export const googleLogin = (token) =>
-  API.post("/auth/google-login/", { token });
+// Google login: send credential token to backend
+export const googleLogin = (token) => API.post("/auth/google-login/", { token });

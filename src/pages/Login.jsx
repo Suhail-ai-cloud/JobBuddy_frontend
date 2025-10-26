@@ -1,9 +1,8 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { login, googleLogin } from "../api/auth";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
-import {API_BASE} from "../config";
+import { API_BASE } from "../config";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { FiMail, FiLock } from "react-icons/fi";
@@ -13,11 +12,11 @@ export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [role, setRole] = useState("user");
   const navigate = useNavigate();
-    React.useEffect(() => {
+
+  useEffect(() => {
     console.log("Google Client ID:", process.env.REACT_APP_GOOGLE_CLIENT_ID);
     console.log("Window origin:", window.location.origin);
   }, []);
-
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -26,27 +25,40 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await login(form.email, form.password);
-      localStorage.setItem("access_token", res.data.access);
+      const token = res.data.access;
+      localStorage.setItem("access_token", token);
+
+      // Set default authorization header for future requests
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
       navigate("/dashboard");
     } catch (err) {
+      console.error(err);
       alert("Login failed. Check your credentials.");
     }
   };
 
   const handleGoogleLogin = async (res) => {
     try {
-      const token = res.credential;
-      const response = await googleLogin(token);
-      const userId = response.data.user_id;
+      const googleToken = res.credential;
 
+      // Step 1: send Google token to backend
+      const response = await googleLogin(googleToken);
+      const userId = response.data.user_id;
       if (!userId) throw new Error("User ID missing");
 
+      // Step 2: select role & get JWT
       const roleRes = await axios.post(`${API_BASE}/google-role-selection/`, {
         user_id: userId,
         role: role,
       });
 
-      localStorage.setItem("access_token", roleRes.data.access);
+      const accessToken = roleRes.data.access;
+      localStorage.setItem("access_token", accessToken);
+
+      // Step 3: set default header for all future requests
+      axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+
       navigate("/dashboard");
     } catch (err) {
       console.error(err);
@@ -73,6 +85,7 @@ export default function Login() {
               value={form.email}
               onChange={handleChange}
               required
+              autoComplete="email"
               whileFocus={{ scale: 1.02, borderColor: "#00796b" }}
             />
           </div>
@@ -85,6 +98,7 @@ export default function Login() {
               value={form.password}
               onChange={handleChange}
               required
+              autoComplete="current-password"
               whileFocus={{ scale: 1.02, borderColor: "#00796b" }}
             />
           </div>
@@ -100,10 +114,7 @@ export default function Login() {
 
         <div className="auth-divider">OR</div>
 
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="google-login-btn"
-        >
+        <motion.div whileHover={{ scale: 1.02 }} className="google-login-btn">
           <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
             onSuccess={handleGoogleLogin}
