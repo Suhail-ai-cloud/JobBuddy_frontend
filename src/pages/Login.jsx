@@ -15,6 +15,7 @@ export default function Login() {
   const navigate = useNavigate();
     React.useEffect(() => {
     console.log("Google Client ID:", process.env.REACT_APP_GOOGLE_CLIENT_ID);
+    console.log("Window origin:", window.location.origin);
   }, []);
 
 
