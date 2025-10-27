@@ -33,7 +33,11 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${visible ? "visible" : ""}`}>
       <div className="navbar-left">
-        <Link to="/" className="logo">JobBuddy</Link>
+        <Link to="/" className="logo">
+  <img src="/svgs/og_logo.svg" alt="JobBuddy Logo" className="logo-icon" />
+  <span className="logo-text">JobBuddy</span>
+</Link>
+
       </div>
 
       {/* Mobile Menu Toggle */}

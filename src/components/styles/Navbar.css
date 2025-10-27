@@ -37,10 +37,32 @@
   letter-spacing: 0.8px;
   transition: transform 0.3s ease;
 }
-
-.logo:hover {
-  transform: scale(1.05);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
+
+.logo-icon {
+  height: 38px;  /* adjust based on your design */
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00796b, #004d40);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.8px;
+  transition: transform 0.3s ease;
+}
+
+
+
 
 /* Navbar Right (links & profile) */
 .navbar-right {
